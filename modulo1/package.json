@@ -26,5 +26,10 @@
     "http-server": "^0.11.1",
     "react": "^15.6.2",
     "react-dom": "^15.6.2"
+  },
+  "standard":{
+    "globals": [
+      "alert"
+    ]
   }
 }
