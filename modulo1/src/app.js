@@ -1,27 +1,39 @@
 'use strict'
 
 import React, { Component } from 'react'
-import Button from './button'
-import Square from './square'
-import LikeButton from './like-button'
-import SearchButton from './search-button'
+import Timer from './timer'
 
 class App extends Component {
    
     constructor(){
+        console.log('constructor')
         super()
         this.state = {
-            color: 'green'
+            showTimer: true
         }
     }
+
+    componentWillMount(){
+        //Executa antes do render
+        //executa no front-end e no back-end
+        //Quando esse método é exeutado, os elementos do render() ainda não estão no DOM3
+        console.log('componentWillMount')
+    }
+
+    componentDidMount(){
+        //executa após o componente ser renderizado
+        //executa somente no front-end
+        console.log('componentDidMount')
+    }
+
     render () {
+        console.log('render')
         return (
             <div>
-                <Square color={this.state.color}/>
-
-                {['red', 'green', 'blue'].map((color) => (
-                    <Button key={color} handleClick={() => this.setState({color})}>{color}</Button>
-                ))}
+                {this.state.showTimer && <Timer />}
+                <button onClick={() => {
+                    this.setState({showTimer: !this.state.showTimer})
+                }}>Show / hide timer</button>
             </div>
         )
     }
