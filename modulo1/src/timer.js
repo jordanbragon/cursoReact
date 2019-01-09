@@ -28,6 +28,13 @@ class Timer extends Component {
         console.log('componentWillReceiveProps', this.props, nextProps)
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        console.log('shouldComponentUpdate', this.state, nextState)
+        return this.state.time !== nextState.time
+        //somente renderiza o component se o return for true
+        //pode usar para comparar os stados do component para que ele seja renderizado caso os estados (nextProps, nextState) sejam diferentes
+    }
+
     render(){
         return <div>Timer: {this.state.time}</div>
     }
