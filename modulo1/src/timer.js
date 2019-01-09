@@ -40,6 +40,11 @@ class Timer extends Component {
         console.log('componentWillUpdate timer', this.props, nextProps)
     }
 
+    componentDidUpdate(prevProps, prevState){
+        //executa após a renderização do component
+        console.log('componentDidUpdate timer', this.props, prevProps)
+    }
+
     render(){
         console.log('render timer')
         return <div>Timer: {this.state.time}</div>
