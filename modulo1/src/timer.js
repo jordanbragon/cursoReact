@@ -20,22 +20,28 @@ class Timer extends Component {
         }, 1000)
     }
 
-    componentWillUnmount(){
+    componentWillUnmount (){
         clearInterval(this.timer)
     }
 
-    componentWillReceiveProps(nextProps){
-        console.log('componentWillReceiveProps', this.props, nextProps)
+    componentWillReceiveProps (nextProps){
+        console.log('componentWillReceiveProps timer', this.props, nextProps)
     }
 
-    shouldComponentUpdate(nextProps, nextState){
-        console.log('shouldComponentUpdate', this.state, nextState)
-        return this.state.time !== nextState.time
+    shouldComponentUpdate (nextProps, nextState){
+        //console.log('shouldComponentUpdate timer', this.state, nextState)
+        return this.props.time !== nextProps.time
         //somente renderiza o component se o return for true
         //pode usar para comparar os stados do component para que ele seja renderizado caso os estados (nextProps, nextState) sejam diferentes
     }
 
+    componentWillUpdate (nextProps, nextState){
+        //executa no momento em que o component vai ser atualizado
+        console.log('componentWillUpdate timer', this.props, nextProps)
+    }
+
     render(){
+        console.log('render timer')
         return <div>Timer: {this.state.time}</div>
     }
     

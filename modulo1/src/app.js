@@ -6,7 +6,7 @@ import Timer from './timer'
 class App extends Component {
    
     constructor(){
-        console.log('constructor')
+        console.log('constructor app')
         super()
         this.state = {
             time: 0,
@@ -18,17 +18,17 @@ class App extends Component {
         //Executa antes do render
         //executa no front-end e no back-end
         //Quando esse método é exeutado, os elementos do render() ainda não estão no DOM3
-        console.log('componentWillMount')
+        console.log('componentWillMount app')
     }
 
     componentDidMount(){
         //executa após o componente ser renderizado
         //executa somente no front-end
-        console.log('componentDidMount')
+        console.log('componentDidMount app')
     }
 
     render () {
-        console.log('render')
+        console.log('render app')
         return (
             <div>
                 <Timer time={this.state.time} />
