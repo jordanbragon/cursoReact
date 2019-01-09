@@ -24,9 +24,14 @@ class Timer extends Component {
         clearInterval(this.timer)
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log('componentWillReceiveProps', this.props, nextProps)
+    }
+
     render(){
         return <div>Timer: {this.state.time}</div>
     }
+    
 }
 
 export default Timer
