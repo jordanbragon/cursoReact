@@ -13,6 +13,8 @@ class Timer extends Component {
     }
 
     componentDidMount(){
+        //executa após o componente ser renderizado
+        //executa somente no front-end
         this.timer = setInterval(() => {
             this.setState({
                 time: this.state.time + 1
@@ -22,6 +24,13 @@ class Timer extends Component {
 
     componentWillUnmount (){
         clearInterval(this.timer)
+    }
+
+    componentWillMount(){
+        //Executa antes do render
+        //executa no front-end e no back-end
+        //Quando esse método é executado, os elementos do render() ainda não estão no DOM3
+        console.log('componentWillMount timer')
     }
 
     componentWillReceiveProps (nextProps){
